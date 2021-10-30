@@ -1,10 +1,8 @@
 #include <iostream>
 #include <boost/fiber/all.hpp>
 
-int value1 = 0;
-int value2 = 0;
+using namespace std;
 
-inline
 void fn1( boost::fibers::barrier & b)
 {
     boost::fibers::fiber::id id = boost::this_fiber::get_id();
@@ -64,6 +62,9 @@ void fn2( boost::fibers::barrier & b)
 
 int main()
 {
+        int value1 = 0;
+        int value2 = 0;
+    
         boost::fibers::barrier fb( 2);
 
         boost::fibers::fiber f1( & fn1, std::ref( fb) );
