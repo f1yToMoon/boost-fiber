@@ -31,7 +31,6 @@ void fn1( boost::fibers::barrier & b)
     std::cout << "fiber " << id << ": fn1 returns" << std::endl;
 }
 
-inline
 void fn2( boost::fibers::barrier & b)
 {
     boost::fibers::fiber::id id = boost::this_fiber::get_id();
